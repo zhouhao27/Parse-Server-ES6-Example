@@ -16,5 +16,5 @@ A parse server example in ES6.
 
 Goto http://localhost:8080/dashboard/ to access the dashboard.
 
-User name: admin
-Password: password
+> User name: admin
+> Password: password
