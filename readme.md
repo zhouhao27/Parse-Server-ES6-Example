@@ -10,6 +10,8 @@ A parse server example in ES6.
 
 > npm i
 
+> mkdir db
+
 ## Run
 
 > npm start
