@@ -1,7 +1,7 @@
 import path from 'path'
 import express from 'express'
 import Parse from 'parse/node'
-import {ParseServer} from 'parse-server'
+import {ParseServer,S3Adapter} from 'parse-server'
 import ParseDashboard from 'parse-dashboard'
 
 const SERVER_PORT = process.env.PORT || 8080
@@ -27,6 +27,15 @@ server.use(
     appId: APP_ID,
     masterKey: MASTER_KEY,
     serverURL: `http://${SERVER_HOST}:${SERVER_PORT}/parse`,
+    filesAdapter: new S3Adapter(
+      "S3_ACCESS_KEY",
+      "S3_SECRET_KEY",
+      "S3_BUCKET",
+      {
+        directAccess: true,
+        region:'S3_REGION'
+      }
+    )
   })
 )
 
