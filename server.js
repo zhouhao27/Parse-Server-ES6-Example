@@ -35,7 +35,10 @@ server.use(
         directAccess: true,
         region:'S3_REGION'
       }
-    )
+    ),
+    liveQuery: {
+      classNames: ['News']
+    }
   })
 )
 
@@ -66,6 +69,6 @@ if (IS_DEVELOPMENT) {
   )
 }
 
-server.listen(SERVER_PORT, () => console.log(
-  `Server is now running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${SERVER_PORT}`
-))
+var httpServer = require('http').createServer(server);
+httpServer.listen(SERVER_PORT);
+var parseLiveQueryServer = ParseServer.createLiveQueryServer(httpServer);
