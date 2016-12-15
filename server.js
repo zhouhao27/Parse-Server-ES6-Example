@@ -65,7 +65,7 @@ if (IS_DEVELOPMENT) {
         appName: 'Parse Server ES6 Example',
       }],
       users,
-      useEncryptedPasswords: true
+      // useEncryptedPasswords: true
     }, IS_DEVELOPMENT),
   )
 }
