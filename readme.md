@@ -23,3 +23,7 @@ Goto http://localhost:8080/dashboard/ to access the dashboard.
 > User name: admin
 
 > Password: password
+
+## Reference
+
+Use [Bcrypt](https://bcrypt-generator.com) to generate password for dashboard.
